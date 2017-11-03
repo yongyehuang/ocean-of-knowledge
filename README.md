@@ -7,6 +7,7 @@ In the ocean of knowledge, I am just a freshwater fish.
 Collection for good papers and learning materials.
 - NLP
 - CV
+- ML&DM
 - else(Tutorials, Coding skills, etc.)
 
 
@@ -26,6 +27,7 @@ Recording the problems encountered in my learning process and the solutions I ha
 My Attainment Experience.
 
 
+————————————————
 
 【中文】
 # 知识的海洋
