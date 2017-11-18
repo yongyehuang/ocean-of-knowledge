@@ -36,6 +36,13 @@ git config –global gui.encoding utf-8
 git config –global i18n.commitencoding utf-8
 ```
 
+- 我用 xftp 从 windows 下把文件传到 linux 后，在 linux 系统下直接显示的就是乱码，这是因为 windows 下使用的是 GBK 编码，我们需要把它转为 UTF-8 编码。可以使用 convmv 命令进行文件名的编码转换，而且可以使用 -r 直接把整个文件夹下的所有文件都改了：
+>convmv -f GBK -t UTF-8 --notest (-r) utf8编码的文件（夹）名
+
+<center><img src="https://raw.githubusercontent.com/yongyehuang/ocean-of-knowledge/master/figs/convmv2.png"   width="80%"/>
+fig1. 使用 convmv 转换中文文件名编码方式
+</center>
+
 ## 4.
 
 
