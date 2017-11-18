@@ -37,13 +37,21 @@ git config –global i18n.commitencoding utf-8
 ```
 
 - 我用 xftp 从 windows 下把文件传到 linux 后，在 linux 系统下直接显示的就是乱码，这是因为 windows 下使用的是 GBK 编码，我们需要把它转为 UTF-8 编码。可以使用 convmv 命令进行文件名的编码转换，而且可以使用 -r 直接把整个文件夹下的所有文件都改了：
->convmv -f GBK -t UTF-8 --notest (-r) utf8编码的文件（夹）名
+```
+convmv -f GBK -t UTF-8 --notest (-r) utf8编码的文件（夹）名
+```
 
-<center><img src="https://raw.githubusercontent.com/yongyehuang/ocean-of-knowledge/master/figs/convmv2.png"   width="80%"/>
+<center><img src="https://raw.githubusercontent.com/yongyehuang/ocean-of-knowledge/master/figs/convmv1.png"   width="80%"/>
 fig1. 使用 convmv 转换中文文件名编码方式
 </center>
 
-## 4.
+## 4.tf.control_dependencies(control_inputs) 是什么用？
+>control_inputs: A list of Operation or Tensor objects which must be executed or computed before running the operations defined in the context. Can also be None to clear the control dependencies. (control_inputs 是一个list，里边每个元素是一个 op。当执行定义在此 'context' 上下文 中的操作时，必须先执行 control_inputs 的所有操作。)
+>以我的经验，在 batch normalization 更新 lambda 和 beta； center loss 中更新 centers 都可以使用这种操作，如下：
+```python 
+with tf.control_dependencies([centers_update_op]):
+    train_op = optimizer.minimize(total_loss, global_step=global_step)
+```
 
 
 
