@@ -28,3 +28,19 @@ convmv -f GBK -t UTF-8 --notest (-r) utf8编码的文件（夹）名
 fig1. 使用 convmv 转换中文文件名编码方式
 </center>
 
+
+## 2.[github]如何更新 fork 别人的项目？
+[同步一个 fork](https://gaohaoyang.github.io/2015/04/12/Syncing-a-fork/)
+
+## 3.[github]把当前的状态用一个新的分支保存起来？
+```shell
+git checkout -b 1.2.1  # 先创建一个新的分支1.2.1并切换到新分支上
+git push origin 1.2.1  # 把新分支传上去
+```
+然后可以在分支上修改内容了，最后把修改的内容通过 merge 合并到 master 分支上面
+```shell
+git checkout master  # 切换回 master 分支
+git merge 1.2.1  # 合并 1.2.1 分支上面做的修改
+```
+
+
